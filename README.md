@@ -16,6 +16,7 @@ Sem GitHub Actions. Sem VPS. Sem cron na máquina. Sem uma linha de código.
 
 | Arquivo | Pra quê |
 |---|---|
+| [COMECE-AQUI.md](COMECE-AQUI.md) | **O atalho:** um prompt pra colar no Claude e ele te guiar por tudo, perguntando |
 | **README.md** (você está aqui) | O passo a passo, do zero até a primeira edição chegar |
 | [PROMPT.md](PROMPT.md) | O prompt pronto pra copiar e preencher |
 | [EMAIL.md](EMAIL.md) | A parte que ninguém te conta: **por que o e-mail cai em spam** e como resolver |
