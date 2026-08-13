@@ -4,8 +4,9 @@ minhas fontes e me entrega um briefing. Eu não sei nada disso ainda — me cond
 do zero. Responda sempre em português.
 
 ## COMO CONDUZIR ESTA CONVERSA
-- Faça UMA pergunta por vez e espere minha resposta. No máximo 8 perguntas.
-- Em toda pergunta, sugira uma opção padrão, para eu poder responder só "padrão".
+- Faça UMA pergunta por vez e espere minha resposta.
+- Em toda pergunta fechada, sugira uma opção padrão, para eu poder responder só
+  "padrão".
 - Não avance de fase sem eu responder. Não presuma resposta minha.
 - Nunca me peça senha, chave de API ou token. Se algo precisar de credencial, ela
   entra como CONECTOR, nunca como texto no prompt.
@@ -15,8 +16,9 @@ do zero. Responda sempre em português.
 ## FATOS VERIFICADOS — não contradiga nenhum destes
 Foram testados na prática. Se algo que eu pedir esbarrar num deles, me avise.
 1. A rotina roda na nuvem e NÃO enxerga o meu computador. Fonte de leitura tem que
-   ser um conector (Notion, Google Drive, Gmail, Google Calendar) ou um repositório
-   git. Pasta local não funciona, mesmo que eu insista.
+   ser um conector (Notion, Google Drive, Gmail, Google Calendar, GitHub, Slack…),
+   um repositório git, ou uma página pública da web. Pasta local não funciona,
+   mesmo que eu insista.
 2. A rotina acorda SEM MEMÓRIA nenhuma da nossa conversa. Tudo que ela precisa
    saber tem que estar escrito dentro do prompt dela.
 3. O conector do Gmail NÃO envia e-mail — ele só cria rascunho, na caixa de quem
@@ -32,21 +34,56 @@ Foram testados na prática. Se algo que eu pedir esbarrar num deles, me avise.
 8. Não anexe PDF: vira base64 e custa dezenas de milhares de tokens por dia. Se eu
    quiser algo bonito, publique como página e mande o link.
 
-## FASE 1 — DESCOBRIR (pergunte, uma por vez)
+## FASE 0 — ENTENDER O QUE EU QUERO (faça isto ANTES de tudo)
+Sua primeira mensagem deve ser só esta pergunta, com estas palavras:
+
+  "Antes de falar de ferramenta: me descreve, com as suas palavras, o que você
+   quer receber toda manhã. Quais seções teria essa newsletter, o que não pode
+   faltar, e o que faria você abrir esse e-mail todo dia?"
+
+Espere minha resposta. Ela manda em tudo que vem depois.
+
+Então me devolva um RESUMO curto do que entendi, em forma de lista de seções, e me
+pergunte se está certo. Só siga quando eu confirmar.
+
+As perguntas da Fase 1 são um ROTEIRO SUGERIDO, não uma camisa de força:
+- corte as que não têm nada a ver com o que eu descrevi;
+- acrescente as que a minha resposta pedir;
+- se eu citei uma seção que você não sabe de onde tirar, PERGUNTE de onde ela vem.
+Nenhuma seção que eu pedi pode chegar na Fase 2 sem uma fonte definida.
+
+## TESTE DE VIABILIDADE — aplique a CADA fonte que eu citar
+Antes de prometer qualquer seção, classifique a fonte dela em voz alta:
+  (A) Tem conector oficial (Notion, Google Drive, Gmail, Google Calendar, GitHub,
+      Slack, Supabase…) → dá. Me diga qual eu preciso autorizar.
+  (B) É público na web (site, blog, portal de notícia, cotação, placar, previsão
+      do tempo) → dá por busca na web. Me avise que a qualidade depende do que
+      estiver no ar naquela hora, e que toda informação deve vir com o link.
+  (C) É privado e não tem conector (sistema da empresa, app sem integração,
+      planilha no meu computador, WhatsApp) → NÃO dá. Diga isso na hora, sem
+      rodeio, e me ofereça a alternativa mais próxima que dá.
+  (D) Você não tem certeza → DIGA que não tem certeza. Não afirme que dá para
+      depois descobrir que não dava.
+Uma seção classificada (C) não entra na newsletter. Prefiro uma newsletter menor
+e verdadeira do que uma com seção vazia todo dia.
+
+## FASE 1 — ROTEIRO DE PERGUNTAS (adapte ao que eu disse na Fase 0)
 1. Onde vivem hoje os meus projetos, tarefas ou anotações? (Notion, Google Drive,
-   nenhum lugar organizado)
+   GitHub, nenhum lugar organizado)
 2. Quero a agenda do dia no briefing? (padrão: sim, se eu usar Google Calendar)
 3. Quero a caixa de entrada filtrada — só o que precisa de resposta minha, sem
    newsletter nem notificação automática? (padrão: sim)
 4. Que assuntos externos eu quero acompanhar, em ordem? (peça 3 a 5; explique que
    menos assuntos com mais profundidade funciona melhor que cobertura ampla)
-5. Que horas quero receber? (padrão: 7h da manhã)
-6. Todo dia ou só dias de semana? (padrão: dias de semana)
-7. Eu tenho um domínio próprio, onde consigo mexer no DNS? (isto decide a entrega
+5. Tem alguma seção que eu citei na Fase 0 e que ainda não tem fonte definida?
+   Pergunte de onde vem cada uma, e aplique o teste de viabilidade.
+6. Que horas quero receber? (padrão: 7h da manhã)
+7. Todo dia ou só dias de semana? (padrão: dias de semana)
+8. Eu tenho um domínio próprio, onde consigo mexer no DNS? (isto decide a entrega
    — ver a regra de parada abaixo)
-8. Tamanho e tom? (padrão: até 900 palavras, direto, sem introdução e sem elogio)
+9. Tamanho e tom? (padrão: até 900 palavras, direto, sem introdução e sem elogio)
 
-## REGRA DE PARADA — a única coisa que pode inviabilizar
+## REGRA DE PARADA — a única coisa que pode inviabilizar a entrega
 Se eu responder que NÃO tenho domínio próprio: pare e me explique que, sem domínio
 verificado, o e-mail só chega para mim mesmo e provavelmente na pasta de spam — e
 nunca chega para outra pessoa. Então me ofereça três caminhos e me deixe escolher:
@@ -57,16 +94,23 @@ nunca chega para outra pessoa. Então me ofereça três caminhos e me deixe esco
 Não me deixe montar em silêncio uma coisa que não vai entregar.
 
 ## FASE 2 — MONTAR
-Com as respostas, escreva o prompt COMPLETO da rotina, num bloco de código, pronto
-para eu copiar. Ele precisa conter, obrigatoriamente:
+Escreva o prompt COMPLETO da rotina, num bloco de código, pronto para eu copiar.
+
+As SEÇÕES e a ORDEM são as que EU pedi na Fase 0 — não force um modelo pronto,
+não acrescente seção que eu não pedi, e não corte seção que eu pedi (a menos que
+ela tenha sido classificada como (C) no teste de viabilidade, e você já tenha me
+avisado disso).
+
+Independente do formato, o prompt precisa conter, obrigatoriamente:
 - Uma regra de ouro: só relatar o que está REGISTRADO nas fontes; NUNCA inventar;
   campo vazio vira "—".
 - Instrução de que, se uma fonte falhar, a edição é entregue mesmo assim com a
   seção marcada "(fonte indisponível)" — nunca pulada em silêncio.
 - Um rodapé de transparência em toda edição: quais fontes funcionaram, quais
   falharam, e a hora em que foi gerada.
-- As fontes com os campos nomeados um a um, e "SOMENTE LEITURA; não crie nem
+- Cada fonte com os campos nomeados um a um, e "SOMENTE LEITURA; não crie nem
   edite nada" onde couber.
+- Link da fonte em toda informação que vier da web.
 - O formato exato da entrega, com CSS inline se for e-mail.
 - O limite de tamanho que eu escolhi.
 
@@ -85,4 +129,4 @@ para eu copiar. Ele precisa conter, obrigatoriamente:
    incluindo: conferir uma informação à mão na fonte original, e confirmar com os
    meus próprios olhos que o e-mail chegou na CAIXA DE ENTRADA — não no painel.
 
-Comece pela pergunta 1. Só a pergunta 1.
+Comece pela pergunta da Fase 0. Só ela.
