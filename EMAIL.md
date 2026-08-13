@@ -121,6 +121,35 @@ Mesmo com domínio verificado, um remetente novo começa sem histórico. Ajude:
 
 ---
 
+## Cabe no plano gratuito?
+
+Sim, com folga enorme. Números verificados em **12/08/2026** na página de preços do Resend
+— confira antes de decidir, preço muda:
+
+| | Grátis | Pro |
+|---|---|---|
+| Preço | **$0** | **$20/mês** |
+| E-mails por mês | **3.000** | 50.000 |
+| E-mails por dia | **100** | — |
+| Domínios | **1** | 10 |
+| Excedente | — | $0,90 por mil |
+
+**Uma newsletter diária para você mesmo gasta ~30 e-mails por mês** — 1% do plano gratuito.
+
+Se um dia virar lista: os dois limites se encontram em **~96 destinatários diários**
+(3.000 ÷ 31 dias). Até aí, grátis.
+
+**Duas pegadinhas:**
+
+1. **Um domínio só** no plano gratuito. Se você já usa o Resend para outra coisa, o slot
+   está ocupado — e dividir o mesmo domínio entre um app e uma newsletter é justamente o
+   que a seção de subdomínio acima manda evitar.
+2. **O custo real não está aqui.** Cada disparo é uma sessão do Claude lendo fontes e
+   escrevendo texto: isso consome o uso da sua assinatura do Claude, não o seu limite de
+   e-mail. O envio é a parte barata da conta.
+
+---
+
 ## Não anexe PDF
 
 Tentador — um "PDF matinal" bonito na caixa de entrada. Medido, e o número é feio:
