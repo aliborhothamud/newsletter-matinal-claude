@@ -52,6 +52,39 @@ numa conversa nova. É o mesmo conteúdo, sem depender de o Claude conseguir abr
 > perguntar de onde tirar cada uma e montar em cima disso. Se ele te empurrar um formato
 > pronto, responda: *"volta pra Fase 0, quero as seções que eu pedi"*.
 
+## Emenda — se ele não te perguntou o que você quer
+
+Se a conversa já começou e o Claude foi direto para perguntas fechadas, sem te perguntar
+o que você quer receber, **não recomece**. Cole isto no meio da conversa:
+
+```
+Pausa as perguntas um segundo — quero corrigir a ordem.
+
+Antes de continuar, me faz esta pergunta e espera minha resposta:
+"o que você quer receber toda manhã? Quais seções teria essa newsletter,
+o que não pode faltar, e o que faria você abrir esse e-mail todo dia?"
+
+Aproveita tudo que eu já te respondi até aqui — não joga fora.
+Depois da minha resposta, me devolve a lista de seções que você entendeu
+e pergunta se está certo.
+
+E daqui pra frente, pra CADA fonte que eu citar, classifica em voz alta
+antes de prometer a seção:
+(A) tem conector oficial → dá, me diz qual autorizar
+(B) é público na web → dá por busca, e toda informação vem com link
+(C) é privado e sem conector (sistema da empresa, app sem integração,
+    planilha no meu PC, WhatsApp) → NÃO dá, me fala na hora e sugere
+    alternativa
+(D) você não tem certeza → diz que não tem certeza, não chuta
+
+Seção sem fonte definida não entra. Prefiro newsletter menor e verdadeira
+do que uma com seção vazia todo dia.
+```
+
+Se você já tiver recebido o prompt final da rotina, acrescente no fim:
+*"Depois disso, reescreve o prompt final da rotina com as seções que eu pedi, na ordem
+que eu pedi."*
+
 ## Se travar
 
 | Aconteceu | Faça |
