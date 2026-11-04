@@ -195,3 +195,5 @@ o contrário: entrega mesmo assim, com a seção marcada `(fonte indisponível)`
 citando a fonte.
 
 Feito por [@alitocode](https://instagram.com/alitocode) · Ali Hamud.
+
+**Relacionado:** [[21. Criação de Conteúdo/02. Produções/video-01-rotina-matinal/ROTEIRO|vídeo 01 — o tutorial em vídeo deste sistema]]
