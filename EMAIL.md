@@ -61,6 +61,32 @@ Por isso o modelo de [PROMPT.md](PROMPT.md) exige CSS inline em maiúsculas. E p
 variação "teaser curto + página completa" é tão conveniente: no e-mail você inlina 10 tags à
 mão; o conteúdo longo vive na página, onde `<style>` funciona normalmente.
 
+**Se for inlinar com ferramenta** (testado com o `juice` em agosto de 2026), são quatro
+pegadinhas:
+
+1. **Na versão 12, em CommonJS, a função mora em `.default`.** `require('juice')` devolve um
+   objeto, e chamar dá `juice is not a function`.
+2. **Ele não resolve `var(--cor)`.** Copia `color: var(--roxo)` literal para a tag, e sem o
+   `:root`, que o Gmail descartou junto com o `<style>`, a cor sai vazia. Troque as variáveis
+   pelos valores **antes** de inlinar.
+3. **O Gmail descarta o `<body>` também.** Pegue só o conteúdo dele e embrulhe num `<div>` que
+   carregue o fundo e a fonte.
+4. **Coluna de números com `display: table-cell` em `<div>` é frágil em cliente de e-mail.**
+   Use `<table>` de verdade.
+
+E dois cuidados de método, que valem para qualquer e-mail HTML:
+
+- **Confira o resultado final, não o arquivo de entrada.** Três checagens de texto no HTML de
+  origem passaram; o que pegou o erro foi abrir o HTML já inlinado e medir a cor que o leitor vê
+  (`getComputedStyle` no elemento).
+- **Cor que aparece em dois lugares sai do mesmo token.** Um hex escrito à mão no `<div>` de
+  embrulho sobreviveu a uma troca de paleta que o script jurava ter feito por inteiro.
+
+> **Acento quebrado no preview local não é o arquivo.** O `python3 -m http.server` serve
+> `text/html` sem `charset`, e o navegador mostra `ediÃ§Ã£o` num arquivo perfeitamente válido.
+> Olhe os bytes (`ç` = `c3 a7`) antes de "consertar" o encoding. No e-mail isso não acontece: o
+> Resend declara `charset=utf-8`.
+
 ---
 
 ## O caminho certo, na ordem
